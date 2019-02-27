@@ -35,7 +35,7 @@ public class SecondActivity extends Activity {
             }
         });
 
-        Uri uri = Uri.parse("content://com.example.contentprovider/user");
+        Uri uri = Uri.parse("content://com.example.contentprovider");
         ContentObserver observer = new ContentObserver(new Handler()) {
             @Override
             public void onChange(boolean selfChange) {
