@@ -1,4 +1,4 @@
-package com.example.contentprovider;
+package com.example.client;
 
 import android.content.Context;
 import android.database.sqlite.SQLiteDatabase;

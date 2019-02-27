@@ -1,6 +1,7 @@
 package com.example.contentprovider;
 
 import android.app.Activity;
+import android.content.ComponentName;
 import android.content.Intent;
 import android.database.ContentObserver;
 import android.net.Uri;
@@ -31,11 +32,13 @@ public class SecondActivity extends Activity {
         findViewById(R.id.text2).setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                startActivity(new Intent(SecondActivity.this, MainActivity.class));
+                Intent intent = new Intent();
+                intent.setComponent(new ComponentName("com.example.client", "com.example.client.MainActivity"));
+                startActivity(intent);
             }
         });
 
-        Uri uri = Uri.parse("content://com.example.contentprovider");
+        Uri uri = Uri.parse("content://com.example.client");
         ContentObserver observer = new ContentObserver(new Handler()) {
             @Override
             public void onChange(boolean selfChange) {

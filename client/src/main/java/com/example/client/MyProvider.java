@@ -1,4 +1,4 @@
-package com.example.contentprovider;
+package com.example.client;
 
 import android.content.ContentProvider;
 import android.content.ContentValues;
@@ -14,7 +14,7 @@ public class MyProvider extends ContentProvider {
     DBHelper mDbHelper = null;
     SQLiteDatabase db = null;
 
-    public static final String AUTOHORITY = "com.example.contentprovider";
+    public static final String AUTOHORITY = "com.example.client";
     // 设置ContentProvider的唯一标识
 
     public static final int User_Code = 1;
@@ -76,12 +76,7 @@ public class MyProvider extends ContentProvider {
     @Override
     public Cursor query(Uri uri, String[] projection, String selection,
                         String[] selectionArgs, String sortOrder) {
-        // 根据URI匹配 URI_CODE，从而匹配ContentProvider中相应的表名
-        // 该方法在最下面
-        String table = getTableName(uri);
-
-        // 查询数据
-        return db.query(table,projection,selection,selectionArgs,null,null,sortOrder,null);
+        return null;
     }
 
     /**
